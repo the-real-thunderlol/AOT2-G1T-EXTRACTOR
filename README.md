@@ -1,10 +1,14 @@
-Requires usage of LINKDATA-EDITOR for G1T files
+Attack on Titan 2 Modding: G1T Extractor
+
+## REQUIRES USAGE OF [LINKDATA-EXTRACTOR](https://github.com/the-real-thunderlol/AOT2-LINKDATA-EXTRACTOR) IN ORDER TO EXTRACT G1T files.
 
 Link: <a href="https://github.com/the-real-thunderlol/AOT2-LINKDATA-EXTRACTOR">https://github.com/the-real-thunderlol/AOT2-LINKDATA-EXTRACTOR</a>
 
+AOT2 Discord: https://discord.gg/fytRnTNTuP
+
 ===
 
-# **Findings**
+## **FINDINGS:**
 - Little endian is used
 little_endian_data = struct.unpack("<III", data[:12])
 print(little_endian_data)
@@ -13,7 +17,7 @@ print(little_endian_data)
 
 magic, version, total_size, header_offset, total_texures, unknown, pad1 = little_endian_data
 
-## Header: ( 28 bytes ) {basically 4 bytes per line, there is no such thing as 14 byte row}
+## Header: ( 28 bytes ) {basically 4 bytes per line}
 
 row 1 - G1TG (47 54 31 47)
 row 2 - 1600 (31 36 30 30) - version 16
@@ -70,5 +74,3 @@ either
 
 where
 16777216 => 1 (in big endian)
-
-
